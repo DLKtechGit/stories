@@ -1,4 +1,4 @@
-const userModel = require('../models/userModel')
+const audioaudiouserModel = require('../models/AudioUserModel');
 
 const registerUser = async (req, res) => {
     const { userName, address, email, password, confirmPassword } = req.body;
@@ -10,7 +10,7 @@ const registerUser = async (req, res) => {
     }
 
     try {
-        const user = await userModel.findOne({ email });
+        const user = await audioaudiouserModel.findOne({ email });
         if (user) {
             return res.status(409).send({
                 message: "Email already exists",
@@ -24,7 +24,7 @@ const registerUser = async (req, res) => {
         }
 
 
-        const userData = await userModel.create({
+        const userData = await audioaudiouserModel.create({
             userName,
             address,
             email,
@@ -53,7 +53,7 @@ const loginUser = async (req, res) => {
     }
 
     try {
-        const user = await userModel.findOne({ email });
+        const user = await audioaudiouserModel.findOne({ email });
         if (!user) {
             return res.status(404).send({
                 message: "User not found",

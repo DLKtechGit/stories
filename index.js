@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const http = require('http');  
 const userRoutes = require('./routes/userRoutes')
 const storyRoutes = require('./routes/storyRoutes')
+const audiouserRoutes = require('./routes/audioUsersRoutes')
 
     
 dotenv.config();    
@@ -27,6 +28,7 @@ mongoose.connect(`${process.env.dbUrl}`)
   
     app.use('/user',userRoutes)
     app.use('/story',storyRoutes)
+    app.use('/audiouser',audiouserRoutes)
     
     
     const PORT = process.env.PORT;
